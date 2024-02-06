@@ -54,6 +54,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.cs" />
+    <Compile Include="Assets\Scripts\Laser.cs" />
+    <Compile Include="Assets\Scripts\Ufo.cs" />
+    <Compile Include="Assets\Scripts\SpawnManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Edge Detection.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Grass Sway.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Blur.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.compute" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Depth Mask Edge Detection.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Ocean.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Dissolve.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Plasma.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Outline.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus Line.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Snow.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Lava3D.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Force Field.shader" />
+    <None Include="Assets\AssetStore\Ultimate 10 Plus Shaders\Shaders\Simple Sine Wave.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -655,6 +675,12 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
