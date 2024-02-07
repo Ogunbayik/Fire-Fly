@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    private ScoreManager scoreManager;
+
     public enum Types
     {
         Player,
@@ -17,6 +19,8 @@ public class Laser : MonoBehaviour
     void Start()
     {
         SetType(laserType);
+
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -48,16 +52,19 @@ public class Laser : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var ufo = other.gameObject.GetComponent<Ufo>();
-        var player = other.gameObject.GetComponent<PlayerController>();
+        var player = other.gameObject.GetComponent<PlayerHealthManager>();
+        var addToScore = ufo.GetScore();
 
         if (ufo)
         {
+            scoreManager.AddScore(addToScore);
             Destroy(this.gameObject);
             Destroy(ufo.gameObject);
         }
         else if (player)
         {
             Destroy(this.gameObject);
+            player.DecreaseHealth();
         }
     }
 

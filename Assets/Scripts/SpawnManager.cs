@@ -22,10 +22,10 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
-        SpawnEnemy();
+        StartEnemySpawning();
     }
 
-    private void SpawnEnemy()
+    private void StartEnemySpawning()
     {
         if (spawnCount < maxSpawnCount)
         {
@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
 
     private Vector3 GetRandomPosition()
     {
-        var spawnPositionZ = 70f;
+        var spawnPositionZ = 10f;
         var randomX = Random.Range(-xRange, xRange);
         var randomY = Random.Range(1, yRange);
 
