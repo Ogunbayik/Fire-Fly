@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
 
     private Vector3 GetRandomPosition()
     {
-        var spawnPositionZ = 10f;
+        var spawnPositionZ = 70f;
         var randomX = Random.Range(-xRange, xRange);
         var randomY = Random.Range(1, yRange);
 

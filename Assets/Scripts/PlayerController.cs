@@ -7,8 +7,13 @@ public class PlayerController : MonoBehaviour
     private const string HORIZONTAL_INPUT = "Horizontal";
     private const string VERTICAL_INPUT = "Vertical";
 
+    
+
     [Header("Player Settings")]
+    [SerializeField] private Transform body;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float rotationAngle;
     [Header("Attack Settings")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private Transform laserPrefab;
@@ -52,10 +57,37 @@ public class PlayerController : MonoBehaviour
             isMove = false;
 
         if (isMove)
+        {
             transform.Translate(movementDirection * movementSpeed * Time.deltaTime);
+        }
 
+        HandleRotation();
         SetBorder();
     }
+
+    private void HandleRotation()
+    {
+        if (isMove)
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                rotationAngle = -30f;
+                var desiredRotation = Quaternion.Euler(0f, 0f, rotationAngle);
+                body.transform.rotation = Quaternion.Slerp(body.transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                rotationAngle = 30f;
+                var desiredRotation = Quaternion.Euler(0f, 0f, rotationAngle);
+                body.transform.rotation = Quaternion.Slerp(body.transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+            }
+        }
+        else
+        {
+            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
+        }
+    }
+
     private void SetBorder()
     {
         var maximumX = xRange;
